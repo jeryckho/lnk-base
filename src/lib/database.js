@@ -32,3 +32,7 @@ export function searchEdges(id) {
 export function insertEdge(id, target, node) {
 	return db.prepare(fs.readFileSync("./db/sql/insert-edge.sql", "utf8")).run([id, target, JSON.stringify(node)]);
 }
+
+export function findEdge(id, target) {
+	return db.prepare(fs.readFileSync("./db/sql/find-edge.sql", "utf8")).all([id, target]);
+}
