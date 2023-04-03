@@ -63,6 +63,31 @@
 			</div>
 		</nav>
 	</div>
+	<div class="column is-half">
+		<nav class="panel">
+			<p class="panel-heading">Nodes</p>
+			<div class="panel-block">
+					<table class="table is-striped is-fullwidth">
+						<thead>
+							<tr>
+								<th>Source</th>
+								<th>Target</th>
+								<th>Properties</th>
+							</tr>
+						</thead>
+						<tbody>
+							{#each data.edges as edge}
+								<tr>
+									<td>{edge.source}</td>
+									<td>{edge.target}</td>
+									<td>{edge.properties}</td>
+								</tr>
+							{/each}
+						</tbody>
+					</table>
+			</div>
+		</nav>		
+	</div>
 </div>
 
 

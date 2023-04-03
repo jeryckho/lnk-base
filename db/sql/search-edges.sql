@@ -1,3 +1,1 @@
-SELECT * FROM edges WHERE source = ? 
-UNION
-SELECT * FROM edges WHERE target = ?
+SELECT * FROM edges WHERE source LIKE ? OR target LIKE ?

@@ -25,12 +25,12 @@ export function searchNode(name = "%") {
 	return db.prepare(fs.readFileSync("./db/sql/search-node.sql", "utf8")).all(name);
 }
 
-export function searchEdges(id) {
+export function searchEdges(id = "%") {
 	return db.prepare(fs.readFileSync("./db/sql/search-edges.sql", "utf8")).all([id, id]);
 }
 
 export function insertEdge(id, target, node) {
-	return db.prepare(fs.readFileSync("./db/sql/insert-edge.sql", "utf8")).run([id, target, JSON.stringify(node)]);
+	return db.prepare(fs.readFileSync("./db/sql/insert-edge.sql", "utf8")).run([id, target,node]);
 }
 
 export function findEdge(id, target) {
